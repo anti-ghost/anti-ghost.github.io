@@ -8,6 +8,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   color: white;
   text-decoration: none;
+  font-size: 40px;
 }
 #footer {
   background-color: black;
