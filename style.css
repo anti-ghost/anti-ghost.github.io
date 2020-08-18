@@ -3,3 +3,15 @@ body {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
+#title {
+  background-color: black;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  text-decoration: none;
+}
+#footer {
+  background-color: black;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  font-size: 12px;
+}
