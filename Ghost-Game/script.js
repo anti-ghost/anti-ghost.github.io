@@ -1,5 +1,6 @@
 (function() {
   "use strict";
+
   const Vue = window.Vue;
   let game;
   function reset() {
