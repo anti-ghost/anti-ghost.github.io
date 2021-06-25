@@ -14,6 +14,8 @@
   function increment() {
     game.ghosts++;
   }
+  
+  reset();
 
   const vue = new Vue({
     el: "#app",
