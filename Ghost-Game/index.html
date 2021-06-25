@@ -12,6 +12,9 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>You have {{game.ghosts}} ghosts</h1>
+    <div id="app">
+      <h1>You have {{game.ghosts}} ghosts</h1>
+      <button @click="increment()">Click to get ghosts</button>
+    </div>
   </body>
 </html>
