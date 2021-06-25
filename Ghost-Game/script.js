@@ -23,6 +23,7 @@
     if (loadgame !== null) {
       loadGame(loadgame);
     }
+    window.setInterval(() => loop(Date.now() - game.lastTick), 16.6667);
   }
   
   function loadGame(loadgame) {
@@ -53,6 +54,7 @@
       game.ghosts += Math.floor(game.autoLoop / 1000);
       game.autoLoop %= 1000;
     }
+    save();
   }
   
   reset();
