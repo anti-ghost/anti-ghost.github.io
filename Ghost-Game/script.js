@@ -11,7 +11,7 @@
     game.ghosts++;
   }
   const vue = new Vue({
-    el: "body",
+    el: "#app",
     data: {
       game: game
     }
