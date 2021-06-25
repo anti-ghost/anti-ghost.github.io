@@ -15,6 +15,11 @@
     <div id="app">
       <h1>You have {{game.ghosts}} ghosts</h1>
       <button @click="increment()">Click to get ghosts</button>
+      <p>
+        <button @click="buyAutoclicker()">
+          Buy an autoclicker for {{100 * 2 ** game.autoclickers}} ghosts
+        </button>
+      </p>
     </div>
   </body>
 </html>
