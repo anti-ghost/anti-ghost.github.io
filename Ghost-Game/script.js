@@ -21,6 +21,9 @@
     el: "#app",
     data: {
       game: game
+    },
+    methods: {
+      increment: increment
     }
   });
 })();
