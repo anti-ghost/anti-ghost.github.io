@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>                                                                <!-- -->
+  <head>
     <meta charset="utf-8" />
-    <title>Ghost Game</title>
+    <title>The Number Line</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="icon" href="/ghost.jpg" />
     <script 
-       src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"
+       src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"
        defer
     ></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div id="app">
-      <h1>You have {{game.ghosts}} ghosts</h1>
-      <button @click="increment()">Click to get ghosts</button>
-      <p>
-        <button @click="buyAutoclicker()">
-          Buy an autoclicker for {{10 * 2 ** game.autoclickers}} ghosts
-        </button>
-      </p>
+      <h1>{{game.number}}</h1>
     </div>
   </body>
 </html>
