@@ -1,73 +1,62 @@
-(function() {
+(function(window) {
   "use strict";
-
+  
   const Vue = window.Vue;
-
-  let game;
-
+  
+  const newGame = {
+    lastTick: Date.now(),
+    offlineProg: true,
+    number: 0
+  };
+  
+  const game = {};
+  
   function reset() {
-    game = {
-      lastTick: Date.now(),
-      ghosts: 0,
-      autoclickers: 0,
-      autoLoop: 0
-    };
+    for (const i in newGame) {
+      game[i] = newGame[i];
+    }
   }
   
   function save() {
-    localStorage.setItem("ghostGameSave", JSON.stringify(game));
+    localStorage.setItem("TheNumberLineSave", btoa(JSON.stringify(game)));
   }
   
   function load() {
-    const loadgame = JSON.parse(localStorage.getItem("ghostGameSave"));
+    const loadgame = JSON.parse(atob(localStorage.getItem("TheNumberLineSave")));
     if (loadgame !== null) {
       loadGame(loadgame);
     }
-    window.setInterval(() => loop(Date.now() - game.lastTick), 0);
-    window.setInterval(() => save(), 5000);
+    setInterval(() => simulateTime(Date.now() - game.lastTick), 0);
+    setInterval(() => save(), 5000);
   }
   
   function loadGame(loadgame) {
-    reset();
     for (const i in loadgame) {
       game[i] = loadgame[i];
     }
     const diff = Date.now() - game.lastTick;
     console.log(diff);
-    loop(diff, true);
-  }
-
-  function increment() {
-    game.ghosts++;
-  }
-  
-  function buyAutoclicker() {
-    if (game.ghosts >= 10 * 2 ** game.autoclickers) {
-      game.ghosts -= 10 * 2 ** game.autoclickers;
-      game.autoclickers++;
+    if (game.offlineProg) {
+      simultateTime(diff);
     }
   }
   
-  function loop(ms, off = false) {
+  function loop(time) {
     game.lastTick = Date.now();
-    game.autoLoop += ms * game.autoclickers;
-    if (game.autoLoop >= 1000) {
-      game.ghosts += Math.floor(game.autoLoop / 1000);
-      game.autoLoop %= 1000;
+  }
+  
+  function simulateTime(ms) {
+    for (let i = 0; i < 10; i++) {
+      loop(ms / 10000);
     }
   }
   
   reset();
   load();
-
+  
   const vue = new Vue({
     el: "#app",
-    data: {
-      game: game
-    },
-    methods: {
-      increment: increment,
-      buyAutoclicker: buyAutoclicker
-    }
+    data: {game},
+    methods: {}
   });
-})();
+})(this);
