@@ -1,7 +1,7 @@
-(function(window) {
+(function(global) {
   "use strict";
   
-  const Vue = window.Vue;
+  const Vue = global.Vue;
   
   const newGame = {
     lastTick: Date.now(),
@@ -11,9 +11,9 @@
   
   const game = {};
   
-  function reset() {
-    for (const i in newGame) {
-      game[i] = newGame[i];
+  function reset(obj = newGame) {
+    for (const i in obj) {
+      game[i] = obj[i];
     }
   }
   
@@ -51,7 +51,6 @@
     }
   }
   
-  reset();
   load();
   
   const vue = new Vue({
