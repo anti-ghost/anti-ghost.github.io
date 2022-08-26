@@ -3,6 +3,25 @@
   
   const Vue = global.Vue;
   
+  function getNumberRate(t = 1) {
+    return t;
+  }
+  
+  function format(number, int = false) {
+    if (number < 0) return "-" + format(-number);
+    if (int && number < 999999.5) return number.toFixed(0);
+    if (number <= 9.9995) number.toFixed(3);
+    if (number < 1000) return number.toPrecision(4);
+    if (number < 999999.5) return number.toFixed(0);
+    let exponent = Math.floor(Math.log10(number));
+    let mantissa = number / 10 ** exponent;
+    if (format(mantissa) === "10.000") {
+      mantissa = 1;
+      exponent++;
+    }
+    return format(mantissa) + "e" + exponent.toFixed(0);
+  }
+  
   const newGame = {
     lastTick: Date.now(),
     offlineProg: true,
@@ -43,6 +62,7 @@
   
   function loop(time) {
     game.lastTick = Date.now();
+    game.number += getNumberRate(time);
   }
   
   function simulateTime(ms) {
@@ -55,7 +75,10 @@
   
   const vue = new Vue({
     el: "#app",
-    data: {game},
-    methods: {}
+    data: { game },
+    methods: {
+      getNumberRate,
+      format
+    }
   });
 })(this);
