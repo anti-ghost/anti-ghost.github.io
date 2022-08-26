@@ -74,10 +74,14 @@
   load();
   
   const vue = Vue.createApp({
-    data: { game },
-    methods: {
-      getNumberRate,
-      format
+    data() {
+      return { game };
+    },
+    methods() {
+      return {
+        getNumberRate,
+        format
+      };
     }
   });
   
