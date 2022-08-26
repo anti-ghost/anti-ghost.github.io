@@ -56,7 +56,7 @@
     const diff = Date.now() - game.lastTick;
     console.log(diff);
     if (game.offlineProg) {
-      simultateTime(diff);
+      simulateTime(diff);
     }
   }
   
