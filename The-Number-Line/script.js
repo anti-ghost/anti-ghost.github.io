@@ -74,11 +74,12 @@
   load();
   
   const vue = Vue.createApp({
-    el: "#app",
     data: { game },
     methods: {
       getNumberRate,
       format
     }
   });
+  
+  vue.mount("#app");
 })(this);
