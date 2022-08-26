@@ -41,7 +41,7 @@
   }
   
   function load() {
-    if (localStorage.getItem("TheNumberLineSave") === null) {
+    if (localStorage.getItem("TheNumberLineSave") !== null) {
       const loadgame = JSON.parse(atob(localStorage.getItem("TheNumberLineSave")));
       loadGame(loadgame);
     } else reset();
