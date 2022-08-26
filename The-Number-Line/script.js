@@ -41,10 +41,10 @@
   }
   
   function load() {
-    const loadgame = JSON.parse(atob(localStorage.getItem("TheNumberLineSave")));
-    if (loadgame !== null) {
+    if (localStorage.getItem("TheNumberLineSave") === null) {
+      const loadgame = JSON.parse(atob(localStorage.getItem("TheNumberLineSave")));
       loadGame(loadgame);
-    }
+    } else reset();
     setInterval(() => simulateTime(Date.now() - game.lastTick), 0);
     setInterval(() => save(), 5000);
   }
