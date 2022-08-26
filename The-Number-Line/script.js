@@ -73,7 +73,7 @@
   
   load();
   
-  const vue = new Vue({
+  const vue = Vue.createApp({
     el: "#app",
     data: { game },
     methods: {
