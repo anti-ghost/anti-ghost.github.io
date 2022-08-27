@@ -1,11 +1,20 @@
+/*
+The Number Line v0.1.0
+© 2022 resu deteleD
+Licensed under the MIT License
+*/
+
 (function(global) {
   "use strict";
+  
+  const VERSION = "0.1.0";
   
   const Vue = global.Vue;
   
   const game = Vue.reactive({});  
   
   const newGame = {
+    version: VERSION,
     timeStarted: Date.now(),
     lastTick: Date.now(),
     offlineProg: true,
@@ -124,6 +133,7 @@
   Vue.createApp({
     data() {
       return {
+        VERSION,
         game,
         tab: 0,
         save,
