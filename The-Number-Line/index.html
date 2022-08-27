@@ -25,56 +25,80 @@
         </button>
       </p>
       <div v-if="tab == 0">
-        <p>
-          <button @click="compress(1)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(1), true)}}
-          </button>
-          <button @click="compress(6)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(6), true)}}
-          </button>
-        </p>
-        <p>
-          <button @click="compress(2)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(2), true)}}
-          </button>
-          <button @click="compress(7)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(7), true)}}
-          </button>
-        </p>
-        <p>
-          <button @click="compress(3)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(3), true)}}
-          </button>
-          <button @click="compress(8)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(8), true)}}
-          </button>
-        </p>
-        <p>
-          <button @click="compress(4)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(4), true)}}
-          </button>
-          <button @click="compress(9)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(9), true)}}
-          </button>
-        </p>
-        <p>
-          <button @click="compress(5)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(5), true)}}
-          </button>
-          <button @click="compress(10)" class="compressButton">
-            Compress the number line by 2x<br />
-            Cost: {{format(getCompressCost(10), true)}}
-          </button>
-        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <button @click="compress(1)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(1), true)}}
+                </button>
+              </td>
+              <td>
+                <button @click="compress(6)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(6), true)}}
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button @click="compress(2)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(2), true)}}
+                </button>
+              </td>
+              <td>
+                <button @click="compress(7)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(7), true)}}
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button @click="compress(3)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(3), true)}}
+                </button>
+              </td>
+              <td>
+                <button @click="compress(8)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(8), true)}}
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button @click="compress(4)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(4), true)}}
+                </button>
+              </td>
+              <td>
+                <button @click="compress(9)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(9), true)}}
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button @click="compress(5)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(5), true)}}
+                </button>
+              </td>
+              <td>
+                <button @click="compress(10)" class="compressButton">
+                  Compress the number line by 2x<br />
+                  Cost: {{format(getCompressCost(10), true)}}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div v-if="tab == 1">
         <table>
