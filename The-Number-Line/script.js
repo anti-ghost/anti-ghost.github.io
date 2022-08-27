@@ -69,7 +69,6 @@
     for (let i = 0; i < 10; i++) {
       loop(ms / 10000);
     }
-    if (!off) vue.update();
   }
   
   load();
