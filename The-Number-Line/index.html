@@ -14,7 +14,76 @@
   <body>
     <div id="app">
       <h1>Number: {{format(game.number)}}</h1>
-      Your number is increasing by {{format(getNumberRate())}} per second
+      <p>Your number is increasing by {{format(getNumberRate())}} per second</p>
+      <p>
+        <button @click="tab = 0" class="tabButton">
+          Compressors
+        </button>
+        <button @click="tab = 1" class="tabButton">
+          Options
+        </button>
+      </p>
+      <div v-if="tab == 0">
+        <p>
+          <button @click="compress(1)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(1), true)}}
+          </button>
+          <button @click="compress(6)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(6), true)}}
+          </button>
+        </p>
+        <p>
+          <button @click="compress(2)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(2), true)}}
+          </button>
+          <button @click="compress(7)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(7), true)}}
+          </button>
+        </p>
+        <p>
+          <button @click="compress(3)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(3), true)}}
+          </button>
+          <button @click="compress(8)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(8), true)}}
+          </button>
+        </p>
+        <p>
+          <button @click="compress(4)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(4), true)}}
+          </button>
+          <button @click="compress(9)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(9), true)}}
+          </button>
+        </p>
+        <p>
+          <button @click="compress(5)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(5), true)}}
+          </button>
+          <button @click="compress(10)" class="compressButton">
+            Compress the number line by 2x<br />
+            Cost: {{format(getCompressCost(10), true)}}
+          </button>
+        </p>
+      </div>
+      <div v-if="tab == 1">
+        <p>
+          <button @click="save()" class="optionsButton">Save your game</button>
+          <button @click="importSave()" class="optionsButton">>Import your save via text</button>
+        </p>
+        <p>
+          <button @click="exportSave()" class="optionsButton">Export your save via text</button>
+          <button @click="hardReset()" class="optionsButton">Reset your game</button>
+        </p>
     </div>
   </body>
 </html>
