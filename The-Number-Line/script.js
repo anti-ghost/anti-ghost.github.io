@@ -75,12 +75,14 @@
   
   const vue = Vue.createApp({
     data() {
-      return { game };
+      return {
+        game,
+        format
+      };
     },
     methods() {
       return {
-        getNumberRate,
-        format
+        getNumberRate
       };
     }
   });
