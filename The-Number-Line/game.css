@@ -1,0 +1,16 @@
+button {
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tabButton {
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  margin-right: 4px;
+  border-radius: 6px;
+  padding: 0 12px 0 12px;
+}
