@@ -28,7 +28,7 @@
     number: 0
   };
   
-  const game = {};
+  const game = Vue.reactive({});
   
   function reset(obj = newGame) {
     for (const i in obj) {
@@ -76,7 +76,7 @@
   const vue = Vue.createApp({
     data() {
       return {
-        game: Vue.reactive(game),
+        game,
         getNumberRate,
         format
       };
