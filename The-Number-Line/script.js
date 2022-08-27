@@ -56,7 +56,7 @@
     const diff = Date.now() - game.lastTick;
     console.log(diff);
     if (game.offlineProg) {
-      simulateTime(diff);
+      simulateTime(diff, true);
     }
   }
   
@@ -64,12 +64,12 @@
     game.number += getNumberRate(time);
   }
   
-  function simulateTime(ms) {
+  function simulateTime(ms, off = false) {
     game.lastTick = Date.now();
     for (let i = 0; i < 10; i++) {
       loop(ms / 10000);
     }
-    vue.update();
+    if (!off) vue.update();
   }
   
   load();
