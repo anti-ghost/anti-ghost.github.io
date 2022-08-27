@@ -77,12 +77,8 @@
     data() {
       return {
         game,
+        getNumberRate,
         format
-      };
-    },
-    methods() {
-      return {
-        getNumberRate
       };
     }
   });
