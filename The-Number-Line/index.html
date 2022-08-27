@@ -77,14 +77,19 @@
         </p>
       </div>
       <div v-if="tab == 1">
-        <p>
-          <button @click="save()" class="optionsButton">Save your game</button>
-          <button @click="importSave()" class="optionsButton">Import your save via text</button>
-        </p>
-        <p>
-          <button @click="exportSave()" class="optionsButton">Export your save via text</button>
-          <button @click="hardReset()" class="optionsButton">Reset your game</button>
-        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td><button @click="save()" class="optionsButton">Save your game</button></td>
+              <td><button @click="importSave()" class="optionsButton">Import your save via text</button></td>
+            </tr>
+            <tr>
+              <td><button @click="exportSave()" class="optionsButton">Export your save via text</button></td>
+              <td><button @click="hardReset()" class="optionsButton">Reset your game</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
