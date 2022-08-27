@@ -61,14 +61,15 @@
   }
   
   function loop(time) {
-    game.lastTick = Date.now();
     game.number += getNumberRate(time);
   }
   
   function simulateTime(ms) {
+    game.lastTick = Date.now();
     for (let i = 0; i < 10; i++) {
       loop(ms / 10000);
     }
+    vue.update();
   }
   
   load();
