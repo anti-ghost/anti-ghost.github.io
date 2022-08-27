@@ -14,3 +14,11 @@ button {
   border-radius: 6px;
   padding: 0 12px 0 12px;
 }
+
+.optionsButton {
+  width: 150px;
+  height: 150px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
