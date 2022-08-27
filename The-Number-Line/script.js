@@ -76,7 +76,7 @@
   const vue = Vue.createApp({
     data() {
       return {
-        game,
+        Vue.ref(game),
         getNumberRate,
         format
       };
