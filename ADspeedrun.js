@@ -3,7 +3,7 @@ setInterval(function() {
     bigCrunchReset();
     requestGalaxyReset();
     softReset();
-    buyMaxTickspeed();
+    buyMaxTickSpeed();
     for (let i = 8; i > 0; i--) {
       buyAsManyAsYouCanBuy(i);
     }
