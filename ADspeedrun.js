@@ -2,7 +2,7 @@ setInterval(function() {
   if (player.infinities.eq(0)) {
     bigCrunchReset();
     requestGalaxyReset();
-    softReset();
+    requestDimensionBoost();
     buyMaxTickSpeed();
     for (let i = 8; i > 0; i--) {
       buyAsManyAsYouCanBuy(i);
